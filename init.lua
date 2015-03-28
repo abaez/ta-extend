@@ -7,11 +7,13 @@
 local EX = "extend."
 
 local check = {
-  python = true,
-  go     = true,
   ansi_c = true,
-  linux  = true,
+  cpp    = true,
+  go     = true,
   lua    = true,
+  perl   = true,
+  python = true,
+  yaml   = true,
 }
 
 events.connect(events.LEXER_LOADED, function(lang)
