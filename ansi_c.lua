@@ -8,7 +8,7 @@
 buffer.tab_width  = 2
 buffer.use_tabs   = false
 
-local snippets = snippets.linux
+local snippets = require("linux.snippets")
 
 return {
   snippets = snippets
