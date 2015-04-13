@@ -4,7 +4,7 @@
 -- @license MIT (see LICENSE)
 -- @module go
 
-local snippets = {
+local snippets_list = {
   const = 'const %1(name) %2(type)  = %3(value)',
 
   -- functions
@@ -36,9 +36,7 @@ local snippets = {
 }
 
 if type(snippets) == 'table' then
-  snippets.go = snippets
+  snippets.go = snippets_list
 end
 
-return {
-  snippets = snippets
-}
+return {}

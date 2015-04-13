@@ -4,7 +4,7 @@
 -- @license MIT (see LICENSE)
 -- @module lua
 
-local snippets = {
+local snippets_list = {
   -- loops
   foriter = "for %1(k) in %2(iterator) do\n\t%0\nend",
   fori = "for %1(i), %2(v) in ipairs(%3(table)) do\n\t%0\nend",
@@ -44,7 +44,7 @@ events.connect(events.LEXER_LOADED, function(lang)
 end)
 
 if type(snippets) == 'table' then
-  snippets.lua = snippets
+  snippets.lua = snippets_list
 end
 
 return {}

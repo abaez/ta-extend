@@ -4,7 +4,7 @@
 -- @license MIT (see LICENSE)
 -- @module cpp
 
-local snippets = {
+local snippets_list = {
   fn = '%1(T) %2(name)(%3(arguments)) \n{\n\t%0\n}',
   struct = "struct %1(type_name) {\n\t%0\n} %2( object_name);",
   enum = "enum %1(type_name) {\n\t%0\n} %2( object_name);",
@@ -44,7 +44,7 @@ events.connect(events.LEXER_LOADED, function(lang)
 end)
 
 if type(snippets) == 'table' then
-  snippets.cpp = snippets
+  snippets.cpp = snippets_list
 end
 
 

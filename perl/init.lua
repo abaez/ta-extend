@@ -4,7 +4,7 @@
 -- @license MIT (see LICENSE)
 -- @module perl
 
-local  snippets = {
+local  snippets_list = {
   sub = 'sub %1(name)%2((%3(postprocessors))) {\n\t%0\n}',
 
   -- random
@@ -32,7 +32,7 @@ events.connect(events.LEXER_LOADED, function(lang)
 end)
 
 if type(snippets) == 'table' then
-  snippets.perl = snippets
+  snippets.perl = snippets_list
 end
 
 return {}
