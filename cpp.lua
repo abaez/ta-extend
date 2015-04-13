@@ -5,7 +5,7 @@
 -- @module cpp
 
 --- settings to enable on connect
-buffer.tab_width = 2
+buffer.tab_width = 4
 buffer.use_tabs = false
 buffer.edge_column = 79
 
@@ -16,6 +16,7 @@ local snippets = {
   enum = "enum %1(type_name) {\n\t%0\n} %2( object_name);",
   union = "union %1(type_name) {\n\t%0\n} %2( object_name);",
   template = "template <class %1(T)>\n%1 %2(name)(%3param) \n{\n\t%0\n}",
+  t = "template <typename %1(T)>\n%0",
 
   -- class details
   class = "class %1(name) {\n\t%0\n}%2( object_names);",
