@@ -4,12 +4,6 @@
 -- @license MIT (see LICENSE)
 -- @module cpp
 
---- settings to enable on connect
-buffer.tab_width = 4
-buffer.use_tabs = false
-buffer.edge_column = 79
-
-
 local snippets = {
   fn = '%1(T) %2(name)(%3(arguments)) \n{\n\t%0\n}',
   struct = "struct %1(type_name) {\n\t%0\n} %2( object_name);",
@@ -40,6 +34,18 @@ local snippets = {
   ['case'] = 'case %1(expr):\n\t%2\n%0',
 }
 
-return {
-  snippets = snippets
-}
+events.connect(events.LEXER_LOADED, function(lang)
+  if lang ~= 'cpp' then return end
+
+  --- settings to enable on connect
+  buffer.tab_width  = 4
+  buffer.use_tabs   = false
+  buffer.edge_column = 79
+end)
+
+if type(snippets) == 'table' then
+  snippets.cpp = snippets
+end
+
+
+return {}

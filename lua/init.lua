@@ -4,11 +4,6 @@
 -- @license MIT (see LICENSE)
 -- @module lua
 
---- settings to enable on connect
-buffer.tab_width = 2
-buffer.use_tabs = false
-
-
 local snippets = {
   -- loops
   foriter = "for %1(k) in %2(iterator) do\n\t%0\nend",
@@ -40,6 +35,16 @@ local snippets = {
   ["elseif"] = "elseif %1(condition) then\n\t%2\n%3(end)",
 }
 
-return {
-  snippets = snippets
-}
+events.connect(events.LEXER_LOADED, function(lang)
+  if lang ~= 'lua' then return end
+
+  --- settings to enable on connect
+  buffer.tab_width  = 2
+  buffer.use_tabs   = false
+end)
+
+if type(snippets) == 'table' then
+  snippets.lua = snippets
+end
+
+return {}

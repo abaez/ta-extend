@@ -4,12 +4,16 @@
 -- @license MIT (see LICENSE)
 -- @module ansi_c
 
---- settings to enable on connect
-buffer.tab_width  = 2
-buffer.use_tabs   = false
+events.connect(events.LEXER_LOADED, function(lang)
+  if lang ~= 'ansi_c' then return end
 
-local snippets = require("linux.snippets")
+  --- settings to enable on connect
+  buffer.tab_width  = 2
+  buffer.use_tabs   = false
+end)
 
-return {
-  snippets = snippets
-}
+if type(snippets) == 'table' then
+  snippets.ansi_c = require("linux.snippets")
+end
+
+return {}

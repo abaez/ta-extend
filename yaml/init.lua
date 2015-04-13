@@ -12,6 +12,8 @@ local snippets = {
   ["wi"]     = "with_items:\n\t- %1\n\t- %0",
 }
 
-return {
-  snippets = snippets
-}
+if type(snippets) == 'table' then
+  snippets.yaml = snippets
+end
+
+return {}

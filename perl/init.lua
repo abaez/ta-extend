@@ -4,11 +4,6 @@
 -- @license MIT (see LICENSE)
 -- @module perl
 
---- settings to enable on connect
-buffer.tab_width = 4
-buffer.use_tabs = false
-
-
 local  snippets = {
   sub = 'sub %1(name)%2((%3(postprocessors))) {\n\t%0\n}',
 
@@ -28,6 +23,16 @@ local  snippets = {
   ['else'] = 'else {\n\t%0\n}',
 }
 
-return {
-  snippets = snippets
-}
+events.connect(events.LEXER_LOADED, function(lang)
+  if lang ~= 'perl' then return end
+
+  --- settings to enable on connect
+  buffer.tab_width  = 4
+  buffer.use_tabs   = false
+end)
+
+if type(snippets) == 'table' then
+  snippets.perl = snippets
+end
+
+return {}

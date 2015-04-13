@@ -28,12 +28,16 @@ local snippets = {
   ["if"] = "if %1(statement) {\n\t%2\n}%0",
   ["ife"] = "if %1(statement) {\n\t%2(body)\n} else %3({\n\t%0\n})",
   ["else"] = "else {\n\t%0\n}",
-    ["switch"] = "switch %1(statement) {\n%2\ndefault:\n\t%0\n}",
-    ["case"] = "case %1(name):\n\t%2(block)\n%0",
+  ["switch"] = "switch %1(statement) {\n%2\ndefault:\n\t%0\n}",
+  ["case"] = "case %1(name):\n\t%2(block)\n%0",
 
-    -- random
-    ['select'] = "select {\n\t%0\n}",
+  -- random
+  ['select'] = "select {\n\t%0\n}",
 }
+
+if type(snippets) == 'table' then
+  snippets.go = snippets
+end
 
 return {
   snippets = snippets
