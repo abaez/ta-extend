@@ -6,9 +6,8 @@
 
 local snippets_list = {
   -- loops
-  foriter = "for %1(k) in %2(iterator) do\n\t%0\nend",
-  fori = "for %1(i), %2(v) in ipairs(%3(table)) do\n\t%0\nend",
-  forp = "for %1(k), %2(v) in pairs(%3(table)) do\n\t%0\nend",
+  fori = "for %1(k) in %2(iterator) do\n\t%0\nend",
+  forp = "for %1(k), %2(v) in %3(i)pairs(%4(table)) do\n\t%0\nend",
   ["for"] = "for %1(i) = %2(1), %3(10)%4(, -1) do\n\t%0\nend",
   ["while"] = "while %1(exp) do\n\t%0\nend",
   ["repeat"] = "repeat\n\t%0\nuntil %1(exp) end",
