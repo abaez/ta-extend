@@ -19,8 +19,21 @@ local snippets_list = {
   ['if']    = "when: %1(cond)",
 }
 
-if type(snippets) == 'table' then
+--- direct copy of Mitchell's module to not cause errors...
+function connecting()
+  buffer.use_tabs = false
+  buffer.word_chars = table.concat{
+    'abcdefghijklmnopqrstuvwxyz',
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    '1234567890-*'
+  }
+end
+
+function snipping()
   snippets.yaml = snippets_list
 end
 
-return {}
+return {
+  connecting = connecting,
+  snipping   = snipping
+}
