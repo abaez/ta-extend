@@ -35,8 +35,16 @@ local snippets_list = {
   ['select'] = "select {\n\t%0\n}",
 }
 
-if type(snippets) == 'table' then
+local function connecting()
+  buffer.use_tabs = true
+  buffer.tab_width = 4
+end
+
+local function snipping()
   snippets.go = snippets_list
 end
 
-return {}
+return {
+  connecting = connecting,
+  snipping   = snipping
+}
