@@ -34,16 +34,18 @@ local snippets_list = {
   ["elseif"] = "elseif %1(condition) then\n\t%2\n%3(end)",
 }
 
-events.connect(events.LEXER_LOADED, function(lang)
-  if lang ~= 'lua' then return end
-
+local function connecting()
   --- settings to enable on connect
-  buffer.tab_width  = 2
+  buffer.tab_width  = 6
   buffer.use_tabs   = false
-end)
+end
 
-if type(snippets) == 'table' then
+local function snipping()
   snippets.lua = snippets_list
 end
 
-return {}
+return {
+  lang = 'lua',
+  connecting = connecting,
+  snipping = snipping
+}
