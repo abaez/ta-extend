@@ -16,5 +16,5 @@ end
 
 return {
   connecting = connecting,
-  snipping = snipping
+  snipping   = snipping
 }

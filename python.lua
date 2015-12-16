@@ -30,17 +30,18 @@ local snippets_list = {
   lc = "[%0(%1) for %1(i) in %2(iterator) %3(if %4(expr))]",
 }
 
-events.connect(events.LEXER_LOADED, function(lang)
-  if lang ~= 'python' then return end
-
+local function connecting()
   --- settings to enable on connect
   buffer.tab_width  = 4
   buffer.use_tabs   = false
   buffer.edge_column  = 79
-end)
+end
 
-if type(snippets) == 'table' then
+local function snipping()
   snippets.python = snippets_list
 end
 
-return {}
+return {
+  connecting = connecting,
+  snipping   = snipping
+}
