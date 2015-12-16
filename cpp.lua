@@ -34,18 +34,19 @@ local snippets_list = {
   ['case'] = 'case %1(expr):\n\t%2\n%0',
 }
 
-events.connect(events.LEXER_LOADED, function(lang)
-  if lang ~= 'cpp' then return end
-
+local function connecting()
   --- settings to enable on connect
   buffer.tab_width  = 4
   buffer.use_tabs   = false
   buffer.edge_column = 79
-end)
+end
 
-if type(snippets) == 'table' then
+local function snipping()
   snippets.cpp = snippets_list
 end
 
 
-return {}
+return {
+  connecting = connecting,
+  snipping   = snipping
+}
