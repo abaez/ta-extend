@@ -36,7 +36,7 @@ local snippets_list = {
 
 local function connecting()
   --- settings to enable on connect
-  buffer.tab_width  = 6
+  buffer.tab_width  = 2
   buffer.use_tabs   = false
 end
 
@@ -45,7 +45,6 @@ local function snipping()
 end
 
 return {
-  lang = 'lua',
   connecting = connecting,
-  snipping = snipping
+  snipping   = snipping
 }

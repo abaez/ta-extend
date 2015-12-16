@@ -23,16 +23,17 @@ local  snippets_list = {
   ['else'] = 'else {\n\t%0\n}',
 }
 
-events.connect(events.LEXER_LOADED, function(lang)
-  if lang ~= 'perl' then return end
-
+local function connecting()
   --- settings to enable on connect
   buffer.tab_width  = 4
   buffer.use_tabs   = false
-end)
+end
 
-if type(snippets) == 'table' then
+local function snipping()
   snippets.perl = snippets_list
 end
 
-return {}
+return {
+  connecting = connecting,
+  snipping   = snipping
+}
