@@ -7,8 +7,8 @@
 snippet_list = {
   -- functions and structs
   fn = '%1(T) %2(name)(%3(arguments))%4(;)',
-  struct = "struct %1(name) {\n\t%0\n} %2( object_name);",
-  enum = "enum %1(name) {\n\t%0\n}",
+  struct = "struct %1(name) %2(;)",
+  enum = "enum %1(name) %2(;)",
   ["type"] = "typedef %1(type) %2(alias);%0",
 
   -- random
