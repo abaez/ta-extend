@@ -9,13 +9,14 @@ snippet_list = {
   fn = '%1(T) %2(name)(%3(arguments))%4(;)',
   struct = "struct %1(name) {\n\t%0\n} %2( object_name);",
   enum = "enum %1(name) {\n\t%0\n}",
-  t = "typedef %1(type) %2(alias);%0",
+  ["type"] = "typedef %1(type) %2(alias);%0",
 
   -- random
   ['in'] = '#include %1(<%0>)',
   ['printf'] = 'printf("%1", %2(param))',
   ['/*'] = "/*\n * %0\n */",
-  ["d"] = "(%1(T) *)malloc(sizeof(%1));%0",
+  ["malloc"] = "(%1(T) *)malloc(sizeof(%1));%0",
+  ['def'] = '#ifndef %1(name)\n#define %1\n%0\n#endif // %1',
   ['{'] = "{\n\t%0\n",
 
   -- conditional
