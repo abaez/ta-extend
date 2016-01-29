@@ -6,7 +6,7 @@
 
 snippet_list = {
   -- functions and structs
-  fn = '%1(T) %2(name)(%3(arguments)) \n{\n\t%0\n}',
+  fn = '%1(T) %2(name)(%3(arguments))%4(;)',
   struct = "struct %1(name) {\n\t%0\n} %2( object_name);",
   enum = "enum %1(name) {\n\t%0\n}",
   t = "typedef %1(type) %2(alias);%0",
@@ -16,6 +16,7 @@ snippet_list = {
   ['printf'] = 'printf("%1", %2(param))',
   ['/*'] = "/*\n * %0\n */",
   ["d"] = "(%1(T) *)malloc(sizeof(%1));%0",
+  ['{'] = "{\n\t%0\n",
 
   -- conditional
   ['for'] = 'for (%1(i) = %2(0); %1 %3(<) %4(10); %5(%1++)) {\n\t%0\n}',
