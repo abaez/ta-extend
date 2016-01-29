@@ -12,7 +12,7 @@ snippet_list = {
   ["type"] = "typedef %1(type) %2(alias);%0",
 
   -- random
-  ['in'] = '#include %1(<%0>)',
+  ['in'] = '#include %1(<%2(name)>)%0',
   ['printf'] = 'printf("%1", %2(param))',
   ['/*'] = "/*\n * %0\n */",
   ["malloc"] = "(%1(T) *)malloc(sizeof(%1));%0",
