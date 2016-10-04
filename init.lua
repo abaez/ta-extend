@@ -3,11 +3,11 @@
 -- @author [Alejandro Baez](https://twitter.com/a_baez)
 
 local M = {}
-for filename in lfs.dir(_USERHOME..'/modules/extend/') do
+for filename in lfs.dir(_USERHOME..'/modules/extra/') do
   if filename:find('%.lua$') and filename ~= 'init.lua' then
     -- using the name of the module as the key. ;)
     local key = filename:match('^(.+)%.lua$')
-    M[key] = require('extend.'..key)
+    M[key] = require('extra.'..key)
   end
 end
 

@@ -1,26 +1,25 @@
-# ta-extend
-## extensions for textadept languages by [Alejandro Baez][1]
+# ta-extra
+## Extra for textadept languages by [Alejandro Baez][1]
 
 ### DESCRIPTION
 After using [Textadept][2] for a while, you tend to build your own extensions
 to languages, [among][3] [other][4] [things][5].
-The normal form of extending languages in textadept is usually making a
-**post_init.lua** file in a [language modules][6]. However, the procedure
-can become quite a large set of language modules. Instead, this module
-allows you to extend textadept languages without making a whole new module
-in the process.
+The normal form of extraing languages in textadept is usually making a
+**extra.lua** file in a [language modules][6]. However, the procedure
+can become quite a large set of language modules if you polylinguist.
+Instead, this module allows you to extend textadept languages without making a whole new module in the process.
 
 ### INSTALL
-Clone the *ta-extend* repository to your textadept's **_USERHOME/modules**:
+Clone the *ta-extra* repository to your textadept's **_USERHOME/modules**:
 
 ```
 cd ~/.textadept/modules
-hg clone https://bitbucket.org/a_baez/ta-extend extend
+hg clone https://bitbucket.org/a_baez/ta-extra extra
 ```
 Add to your **_USERHOME/init.lua** file the module:
 
 ```
-require("extend")
+require("extra")
 ```
 
 You are done!
