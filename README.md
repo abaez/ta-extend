@@ -4,10 +4,11 @@
 ### DESCRIPTION
 After using [Textadept][2] for a while, you tend to build your own extensions
 to languages, [among][3] [other][4] [things][5].
-The normal form of extraing languages in textadept is usually making a
+The normal form of extending languages in textadept is usually making a
 **extra.lua** file in a [language modules][6]. However, the procedure
-can become quite a large set of language modules if you polylinguist.
-Instead, this module allows you to extend textadept languages without making a whole new module in the process.
+can become quite a large set of language modules if you are a polylinguist.
+Instead, this module allows you to extend textadept languages without making a
+whole new module in the process.
 
 ### INSTALL
 Clone the *ta-extra* repository to your textadept's **_USERHOME/modules**:
@@ -25,28 +26,56 @@ require("extra")
 You are done!
 
 ### USAGE
-If you want to add your own language extension, simply look at the source of
-one of the languages with this module added to know what to add.
-
-You do need to name the file, for the language you chose, the same as the lexer
-name of the language in textadept. So something like `coffeescript.lua` for
-coffeescript would suffice.
-
-You also need to have the following methods in your language extension for the
-module to work:
+To add a new language, you need to do two things. First is name the module the
+same as the language you want to have extra snippets or changes. So if you want
+*moonscript*, you would need a **moonscript.lua** file for the language.
+Second, make sure you have a
+`connecting` function for language specific buffer changes and a `snipping`
+table:
 
 ```
+-- (some lang).lua
+
 --- language specific buffer changes.
 local function connecting()
 end
 
 --- snippets to add
-local function snipping()
-end
+local snipping = {
+  true,
+
+  "key" = "snippet"
+}
+
+return {
+  snipping = snipping,
+  connecting = connecting
+}
 ```
 
+> *NOTE*: `snipping` has a **true** field as the first element.
+This is to make sure that the snippet isn't reloaded each time the lexer
+is loaded. Thus keeping the speed up of your lovely texteditor.
+
+The `connecting` method and `snipping` table are required, but do not need to
+be filled. If you want just snippets, you can keep the `connecting` method the
+same as below:
+
+```
+local function connecting() end
+```
+
+And if you want only buffer changes, then again, just keep an empty table for
+`snipping`:
+
+```
+local snipping = {}
+```
+
+
+
 ### LICENSE
-Copyright (c) 2015 [Alejandro Baez][1]
+Copyright (c) 2015-2016 [Alejandro Baez][1]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to
