@@ -57,22 +57,9 @@ return {
 This is to make sure that the snippet isn't reloaded each time the lexer
 is loaded. Thus keeping the speed up of your lovely texteditor.
 
-The `connecting` method and `snipping` table are required, but do not need to
-be filled. If you want just snippets, you can keep the `connecting` method the
-same as below:
-
-```
-local function connecting() end
-```
-
-And if you want only buffer changes, then again, just keep an empty table for
-`snipping`:
-
-```
-local snipping = {}
-```
-
-
+The `connecting` method and `snipping` table are optional. Meaning if you want
+to only do buffer changes, you only need a `connecting` method for your module.
+The same can be said for `snipping`, when you only want snippets to be added.
 
 ### LICENSE
 Copyright (c) 2015-2016 [Alejandro Baez][1]
