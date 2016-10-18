@@ -4,7 +4,7 @@
 -- @license MIT (see LICENSE)
 -- @module yaml
 
-local snippets_list = {
+local snipping = {
   ["-"]     = "- name: %1(description)\n\t%2(module): %0",
   ["---"]   = "---\n- name: %0",
   ["f"]     = "\t%1(param)=%0",
@@ -27,10 +27,6 @@ function connecting()
     'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     '1234567890-*'
   }
-end
-
-function snipping()
-  snippets.yaml = snippets_list
 end
 
 return {

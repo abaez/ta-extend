@@ -4,7 +4,7 @@
 -- @license MIT (see LICENSE)
 -- @module perl
 
-local  snippets_list = {
+local snipping = {
   sub = 'sub %1(name)%2((%3(postprocessors))) {\n\t%0\n}',
 
   -- random
@@ -27,10 +27,6 @@ local function connecting()
   --- settings to enable on connect
   buffer.tab_width  = 4
   buffer.use_tabs   = false
-end
-
-local function snipping()
-  snippets.perl = snippets_list
 end
 
 return {

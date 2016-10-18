@@ -4,7 +4,7 @@
 -- @license MIT (see LICENSE)
 -- @module lua
 
-local snippets_list = {
+local snipping = {
   -- loops
   fori = "for %1(k) in %2(iterator) do\n\t%0\nend",
   forp = "for %1(k), %2(v) in %3(i)pairs(%4(table)) do\n\t%0\nend",
@@ -38,10 +38,6 @@ local function connecting()
   --- settings to enable on connect
   buffer.tab_width  = 2
   buffer.use_tabs   = false
-end
-
-local function snipping()
-  snippets.lua = snippets_list
 end
 
 return {

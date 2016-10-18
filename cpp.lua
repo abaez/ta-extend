@@ -4,7 +4,7 @@
 -- @license MIT (see LICENSE)
 -- @module cpp
 
-local snippets_list = {
+local snipping = {
   -- functions and structs
   fn = '%1(T) %2(name)(%3(arguments))%4(;)',
   struct = "struct %1(name) %2(;)",
@@ -44,11 +44,6 @@ local function connecting()
   buffer.use_tabs   = false
   buffer.edge_column = 79
 end
-
-local function snipping()
-  snippets.cpp = snippets_list
-end
-
 
 return {
   connecting = connecting,

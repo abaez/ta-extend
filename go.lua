@@ -4,7 +4,7 @@
 -- @license MIT (see LICENSE)
 -- @module go
 
-local snippets_list = {
+local snipping = {
   const = 'const %1(name) %2(type)  = %3(value)',
 
   -- functions
@@ -38,10 +38,6 @@ local snippets_list = {
 local function connecting()
   buffer.use_tabs = true
   buffer.tab_width = 4
-end
-
-local function snipping()
-  snippets.go = snippets_list
 end
 
 return {
