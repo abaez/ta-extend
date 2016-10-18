@@ -1,10 +1,10 @@
 --- ansi_c extensions
 -- @author [Alejandro Baez](https://twitter.com/a_baez)
--- @coypright 2015
+-- @coypright 2015-2016
 -- @license MIT (see LICENSE)
 -- @module ansi_c
 
-snippet_list = {
+local snipping = {
   -- functions and structs
   fn = '%1(T) %2(name)(%3(arguments))%4(;)',
   struct = "struct %1(name) %2(;)",
@@ -35,10 +35,6 @@ local function connecting()
   --- settings to enable on connect
   buffer.tab_width  = 2
   buffer.use_tabs   = false
-end
-
-local function snipping()
-  snippets.ansi_c = snippet_list
 end
 
 return {
