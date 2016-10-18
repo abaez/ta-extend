@@ -18,11 +18,10 @@ events.connect(events.LEXER_LOADED, function(lang)
     M[lang].connecting()
   end
 
-  if type(snippets) == 'table'
-  and M[lang].snipping ~= nil
-  and #snippets[lang] ~= #M[lang].snipping
-  then
-    snippets[lang] = M[lang].snipping
+  if type(snippets) == 'table' and M[lang].snipping ~= nil then
+    if snippets[lang] == nil or #snippets[lang] ~= #M[lang].snipping then
+      snippets[lang] = M[lang].snipping
+    end
   end
 end)
 
