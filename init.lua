@@ -14,7 +14,9 @@ end
 events.connect(events.LEXER_LOADED, function(lang)
   if M[lang] == nil then return end
 
-  M[lang].connecting()
+  if M[lang].connecting ~= nil then
+    M[lang].connecting()
+  end
 
   if type(snippets) == 'table'
   and M[lang].snipping ~= nil
