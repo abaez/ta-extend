@@ -5,6 +5,8 @@
 -- @module perl
 
 local snipping = {
+  true,
+
   sub = 'sub %1(name)%2((%3(postprocessors))) {\n\t%0\n}',
 
   -- random

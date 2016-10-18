@@ -5,6 +5,8 @@
 -- @module yaml
 
 local snipping = {
+  true,
+
   ["-"]     = "- name: %1(description)\n\t%2(module): %0",
   ["---"]   = "---\n- name: %0",
   ["f"]     = "\t%1(param)=%0",

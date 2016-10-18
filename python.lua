@@ -5,6 +5,7 @@
 -- @module python
 
 local snipping = {
+  true,
 
   ['def'] = 'def %1(name)(%2(params)):\n\t%3("""\n\t%4\n\t"""\n\t)%0',
   ['l'] = "lambda %1(param): %0",

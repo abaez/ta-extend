@@ -5,6 +5,8 @@
 -- @module go
 
 local snipping = {
+  true,
+
   const = 'const %1(name) %2(type)  = %3(value)',
 
   -- functions

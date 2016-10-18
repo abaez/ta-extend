@@ -5,6 +5,8 @@
 -- @module lua
 
 local snipping = {
+  true,
+
   -- loops
   fori = "for %1(k) in %2(iterator) do\n\t%0\nend",
   forp = "for %1(k), %2(v) in %3(i)pairs(%4(table)) do\n\t%0\nend",

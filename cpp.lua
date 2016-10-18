@@ -5,6 +5,8 @@
 -- @module cpp
 
 local snipping = {
+  true,
+
   -- functions and structs
   fn = '%1(T) %2(name)(%3(arguments))%4(;)',
   struct = "struct %1(name) %2(;)",

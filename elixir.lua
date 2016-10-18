@@ -6,6 +6,8 @@
 
 
 local snipping = {
+  true,
+
   ["do"] = "do\n\t%0\nend",
   def = "def%1(p) %2(name)(%3(arguments)) do%0",
   mod = "defmodule %1(name) do%0",
