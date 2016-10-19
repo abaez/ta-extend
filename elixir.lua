@@ -12,6 +12,7 @@ local snipping = {
   def = "def%1(p) %2(name)(%3(arguments)) do%0",
   mod = "defmodule %1(name) do%0",
   fn = "fn %1(param) -> %2(body) end%0",
+  rec = "receive do\n\t%3(body)\n%1(after\n\t%2(timeout))\nend%0"
 }
 
 local function connecting()
